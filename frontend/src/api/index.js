@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
 export const jobsApi = {
   getAll: (params) => axios.get('/api/jobs', { params }),
   getOne: (id) => axios.get(`/api/jobs/${id}`),
